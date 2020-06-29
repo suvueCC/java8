@@ -20,6 +20,8 @@ public class BufferReadFileTest {
     }
 
     private static String readFile(BufferReaderProcessor processor) throws IOException {
+        //try-with-resources的用法就是，在try关键字的后面跟一个括号
+        // 把需要关闭的资源定义在括号内。在try块执行完之后会自动的释放掉资源。
         try (BufferedReader reader = new BufferedReader(new FileReader("Z:\\tmp\\test.txt"))) {
             return processor.read(reader);
         }
